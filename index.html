@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f8fc">
+  <meta name="description" content="Discover Perth companies and who's hiring with BizBeacon.">
+  <title>BizBeacon — Perth companies & jobs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-ribbon"><span class="pulse"></span> CONCEPT DEMO <span class="ribbon-note">Sample companies and roles — not live listings</span></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="BizBeacon home"><span class="brand-mark">b<span>.</span></span><span>biz<span class="brand-light">beacon</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a class="nav-active" href="#companies">Explore companies</a><a href="#how-it-works">How it works</a></nav>
+    <div class="top-actions"><button class="text-button" id="savedToggle" aria-pressed="false"><span class="bookmark-icon">♡</span> Saved <span class="saved-count" id="savedCount">0</span></button><button class="button button-dark button-small" data-open="postModal">For employers <span>↗</span></button><button class="mobile-menu" aria-label="Open menu">☰</button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT MOVE STARTS LOCAL</div>
+        <h1>Good work<br>is <em>closer</em> than you think.</h1>
+        <p>Meet the companies building Perth. Find your next role, or the team you didn't know you were looking for.</p>
+        <div class="hero-buttons"><a class="button button-primary" href="#companies">Explore Perth companies <span>↓</span></a><button class="button button-quiet" data-open="postModal">Hiring in Perth? <span>↗</span></button></div>
+        <div class="hero-proof"><div class="avatar-stack"><i>J</i><i>M</i><i>A</i><i>+</i></div><span>Made for the people<br>building Perth.</span><span class="hero-star">✳</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a Perth city skyline">
+        <div class="art-sun"></div><div class="art-label">PERTH, WA <span>31.95° S / 115.86° E</span></div>
+        <div class="skyline"><div class="tower tower-a"><i></i><i></i><i></i><i></i></div><div class="tower tower-b"><i></i><i></i><i></i><i></i><i></i></div><div class="tower tower-c"><i></i><i></i><i></i></div><div class="tower tower-d"><i></i><i></i><i></i><i></i></div><div class="tower tower-e"><i></i><i></i><i></i></div><div class="tree"></div></div>
+        <div class="art-ground"></div><div class="art-card"><span class="art-card-icon">↗</span><div><strong>Big things happen here.</strong><small>Find your place in Perth.</small></div><span class="art-card-spark">✳</span></div>
+        <div class="floating-tag tag-one"><span class="tag-icon">✳</span><span><b>Locally rooted</b><small>Built for Perth</small></span></div><div class="floating-tag tag-two"><span class="live-dot"></span><span><b>Fresh opportunities</b><small>Updated regularly</small></span></div>
+      </div>
+    </section>
+
+    <section class="stats-bar" aria-label="Directory snapshot"><div><strong id="companyStat">08</strong><span>local companies</span></div><div><strong>06</strong><span>industries to explore</span></div><div><strong>01</strong><span>city. Plenty of paths.</span></div><div class="stats-note"><span class="tiny-star">✳</span> Perth-first. People-focused.</div></section>
+
+    <section class="directory-section" id="companies">
+      <div class="section-heading"><div><div class="eyebrow eyebrow-muted">THE LOCAL LINEUP</div><h2>Find your <em>people.</em></h2><p>A starting point for what's happening across Perth.</p></div><button class="button button-outline" data-open="postModal"><span class="plus">＋</span> Add your company</button></div>
+      <div class="directory-shell">
+        <div class="directory-toolbar"><div class="result-copy"><span class="result-dot"></span><strong id="resultCount">08 companies</strong><span class="muted">in the Perth area</span></div><div class="toolbar-controls"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search companies or roles" aria-label="Search companies or roles"><kbd>⌘ K</kbd></label><label class="sort-box"><span class="sr-only">Sort by</span><select id="sortSelect"><option value="featured">Sort: Featured</option><option value="name">Name: A to Z</option><option value="jobs">Most roles</option></select></label></div></div>
+        <div class="filters" role="group" aria-label="Filter companies"><span class="filter-label">EXPLORE BY</span><button class="chip chip-active" data-filter="all">All companies <span class="chip-count">08</span></button><button class="chip" data-filter="hiring">✳ Hiring now</button><span class="filter-divider"></span><button class="chip" data-filter="Technology">Technology</button><button class="chip" data-filter="Energy">Energy</button><button class="chip" data-filter="Design">Design</button><button class="chip" data-filter="Community">Community</button><button class="filter-more" id="moreFilters">More filters <span>⌄</span></button></div>
+        <div class="more-filter-panel" id="moreFilterPanel"><span>COMPANY SIZE</span><button class="size-filter" data-size="all">Any size</button><button class="size-filter" data-size="small">1–50</button><button class="size-filter" data-size="medium">51–500</button><button class="size-filter" data-size="large">500+</button></div>
+        <div class="company-list" id="companyList" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>No matches yet</h3><p>Try a different search or clear your filters.</p><button id="clearFilters" class="text-link">Clear filters ↗</button></div>
+        <div class="directory-footer"><span>Showing <b id="showingCount">08</b> of 08 local companies <span class="footer-demo">· Demo dataset</span></span><button class="text-link" id="resetView">Reset view <span>↺</span></button></div>
+      </div>
+    </section>
+
+    <section class="employer-banner" id="how-it-works"><div class="banner-orbit orbit-a"></div><div class="banner-orbit orbit-b"></div><div class="banner-content"><div class="banner-copy"><div class="eyebrow eyebrow-invert"><span>✳</span> A LITTLE PERTH LOVE</div><h2>Good people are<br>looking for <em>you.</em></h2><p>Put your team on the map. Be one of the first local companies candidates discover.</p><button class="button button-white" data-open="postModal">Feature a role for $1 <span>↗</span></button><small class="banner-footnote">Founding offer · One-time listing · Demo checkout</small></div><div class="banner-card-wrap"><div class="banner-card"><div class="banner-card-top"><span class="mini-brand-mark">b.</span><span class="featured-pill">✳ FEATURED</span></div><div class="banner-logo">N</div><div class="banner-company">Northstar Studio <span class="verified">✓</span></div><div class="banner-role">Product Designer <span>↗</span></div><div class="banner-meta"><span>◷ Full-time</span><span>⌖ Perth, WA</span></div><div class="banner-card-bottom"><span>Get seen by local talent</span><span>01 / 01</span></div></div><div class="banner-sticker">$1<span>to get<br>started</span></div></div></div><div class="banner-bottom"><span>Small fee. Local reach. Real potential.</span><span>BUILT FOR THE WEST <b>✳</b></span></div></section>
+
+    <section class="how-section"><div><div class="eyebrow eyebrow-muted">SIMPLE BY DESIGN</div><h2>From curious to <em>career move.</em></h2></div><div class="how-steps"><article><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Explore local</h3><p>Find Perth companies by what they do, where they are, and who they're looking for.</p></article><article><span class="step-number">02</span><div class="step-icon">♡</div><h3>Find your fit</h3><p>Get a feel for the team, the work, and the opportunities worth a closer look.</p></article><article><span class="step-number">03</span><div class="step-icon">↗</div><h3>Make a move</h3><p>Head straight to the source and take the next step with the company.</p></article></div></section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#top"><span class="brand-mark">b<span>.</span></span><span>biz<span class="brand-light">beacon</span></span></a><span>Made with a little West Coast optimism. <span class="footer-spark">✳</span></span><span>PERTH, WESTERN AUSTRALIA · <span id="year"></span></span></footer>
+
+  <dialog class="modal" id="detailModal"><button class="modal-close" data-close aria-label="Close">×</button><div id="detailContent"></div></dialog>
+  <dialog class="modal offer-modal" id="postModal"><button class="modal-close" data-close aria-label="Close">×</button><div class="modal-eyebrow">FOUNDING EMPLOYER OFFER</div><div class="offer-icon">✳</div><h2>Put your next role<br>on the <em>local map.</em></h2><p class="modal-description">Get one featured job listing in front of Perth talent. Simple, local, and made to get things moving.</p><div class="offer-price"><span>ONE-TIME FOUNDING PRICE</span><strong>$1<span>.00</span></strong><small>per job listing</small></div><ul class="offer-list"><li><span>✓</span> Featured placement in the Perth directory</li><li><span>✓</span> Direct link to your application page</li><li><span>✓</span> No subscription. No fuss.</li></ul><label class="email-label" for="employerEmail">Your work email</label><input id="employerEmail" class="email-input" type="email" placeholder="you@yourcompany.com"><button class="button button-primary offer-submit" id="offerSubmit">Reserve your $1 listing <span>↗</span></button><div class="payment-note"><span>◈</span> Checkout is a demo preview. No payment is taken.</div><div class="offer-success" id="offerSuccess" hidden><strong>You're on the list ✳</strong><span>Thanks for helping kickstart BizBeacon. Payment isn't connected in this demo.</span></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
